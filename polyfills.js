@@ -1,7 +1,7 @@
-// const myForEach = [4, 5, 6, 7,8, 9];
-// console.log(myForEach)
+// const um_forEach = [4, 5, 6, 7,8, 9];
+// console.log(um_forEach)
 
-// // myForEach.forEach((item, i, self) => {
+// // um_forEach.forEach((item, i, self) => {
 // //     console.log(item, i, self)
 // // })
 
@@ -15,7 +15,7 @@
 //     }
 // }
 
-// myForEach.myForEach((item, i, self) => {
+// um_forEach.myForEach((item, i, self) => {
 //     console.log(item, i, self)
 // })
 
@@ -24,11 +24,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// const myMap = [1, 2, 3, 4, 5];
+// const umMap = [1, 2, 3, 4, 5];
 
-// Array.prototype.umMap = function(callback) {
+// Array.prototype.myMap = function(callback) {
 //     if(!callback) {
-//         throw new Error("umMap Error: your callback is not function.");
+//         throw new Error("myMap Error: your callback is not function.");
 //     }
 
 //     const newArr = [];
@@ -41,6 +41,6 @@
 //     return newArr;
 // }
 
-// console.log(myMap.umMap((item) => {
+// console.log(umMap.myMap((item) => {
 //     return item * 5
 // }))
