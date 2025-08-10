@@ -24,19 +24,23 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-const myMap = [1, 2, 3, 4, 5];
-console.log(myMap)
+// const myMap = [1, 2, 3, 4, 5];
 
-Array.prototype.umMap = function(callback) {
-    if(!callback) {
-        throw new Error("umMap Error: your callback is not function.");
-    }
+// Array.prototype.umMap = function(callback) {
+//     if(!callback) {
+//         throw new Error("umMap Error: your callback is not function.");
+//     }
 
-    for(let i = 0; i < this.length; i++) {
-        callback(this[i], i, this);
-    }
-}
+//     const newArr = [];
 
-myMap.umMap((item, i, self) => {
-    console.log(item, i, self)
-})
+//     for(let i = 0; i < this.length; i++) {
+//         const result = callback(this[i], i, this);
+//         newArr.push(result);
+//     }
+
+//     return newArr;
+// }
+
+// console.log(myMap.umMap((item) => {
+//     return item * 5
+// }))
