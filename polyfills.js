@@ -48,23 +48,45 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-const umFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const umFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-Array.prototype.myFilter = function(callback) {
+// Array.prototype.myFilter = function(callback) {
+//     if(!callback) {
+//         throw new Error("myFilter Error: your callback is not function.");
+//     }
+
+//     const newArr = [];
+
+//     for(let i = 0; i < this.length; i++) {
+//         const result = callback(this[i], i, this);
+//         if(result) newArr.push(this[i]);
+//     }
+
+//     return newArr;
+// }
+
+// console.log(umFilter.myFilter((item) => {
+//     return item % 2 !== 0
+// }))
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const umFind = [{id: 1, name: "Umair"}, {id: 2, name: "Momi"}, {id: 3, name: "Hadi"}];
+
+Array.prototype.myFind = function(callback) {
     if(!callback) {
-        throw new Error("myFilter Error: your callback is not function.");
+        throw new Error("myFind Error: your callback is not function.");
     }
-
-    const newArr = [];
 
     for(let i = 0; i < this.length; i++) {
         const result = callback(this[i], i, this);
-        if(result) newArr.push(this[i]);
+        if(result) {
+            return this[i];
+        }
     }
 
-    return newArr;
+    return undefined;
 }
 
-console.log(umFilter.myFilter((item) => {
-    return item % 2 !== 0
-}))
+console.log(umFind.myFind((item) => item.id === 2))
