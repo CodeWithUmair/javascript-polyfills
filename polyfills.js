@@ -72,21 +72,44 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-const umFind = [{id: 1, name: "Umair"}, {id: 2, name: "Momi"}, {id: 3, name: "Hadi"}];
+// const umFind = [{id: 1, name: "Umair"}, {id: 2, name: "Momi"}, {id: 3, name: "Hadi"}];
 
-Array.prototype.myFind = function(callback) {
+// Array.prototype.myFind = function(callback) {
+//     if(!callback) {
+//         throw new Error("myFind Error: your callback is not function.");
+//     }
+
+//     for(let i = 0; i < this.length; i++) {
+//         const result = callback(this[i], i, this);
+//         if(result) {
+//             return this[i];
+//         }
+//     }
+
+//     return undefined;
+// }
+
+// console.log(umFind.myFind((item) => item.id === 2))
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const umSome = [-2, -3, 0, 4, 5, 6, 7];
+
+Array.prototype.mySome = function(callback) {
     if(!callback) {
-        throw new Error("myFind Error: your callback is not function.");
+        throw new Error("mySome Error: your callback is not function.");
     }
 
     for(let i = 0; i < this.length; i++) {
         const result = callback(this[i], i, this);
         if(result) {
-            return this[i];
+            return true;
         }
     }
 
-    return undefined;
+    return false;
 }
 
-console.log(umFind.myFind((item) => item.id === 2))
+console.log(umSome.mySome((item) => item > 5))
