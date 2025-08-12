@@ -95,21 +95,44 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-const umSome = [-2, -3, 0, 4, 5, 6, 7];
+// const umSome = [-2, -3, 0, 4, 5, 6, 7];
 
-Array.prototype.mySome = function(callback) {
+// Array.prototype.mySome = function(callback) {
+//     if(!callback) {
+//         throw new Error("mySome Error: your callback is not function.");
+//     }
+
+//     for(let i = 0; i < this.length; i++) {
+//         const result = callback(this[i], i, this);
+//         if(result) {
+//             return true;
+//         }
+//     }
+
+//     return false;
+// }
+
+// console.log(umSome.mySome((item) => item > 5))
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const umEvery = [2, 3, 10, 4, 5, 6, 7];
+
+Array.prototype.myEvery = function(callback) {
     if(!callback) {
-        throw new Error("mySome Error: your callback is not function.");
+        throw new Error("myEvery Error: your callback is not function.");
     }
 
     for(let i = 0; i < this.length; i++) {
         const result = callback(this[i], i, this);
-        if(result) {
-            return true;
+        if(!result) {
+            return false;
         }
     }
 
-    return false;
+    return true;
 }
 
-console.log(umSome.mySome((item) => item > 5))
+console.log(umEvery.myEvery((item) => item > 0))
