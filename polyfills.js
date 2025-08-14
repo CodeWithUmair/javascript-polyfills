@@ -118,11 +118,33 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-const umEvery = [2, 3, 10, 4, 5, 6, 7];
+// const umEvery = [2, 3, 10, 4, 5, 6, 7];
 
-Array.prototype.myEvery = function(callback) {
+// Array.prototype.myEvery = function(callback) {
+//     if(!callback) {
+//         throw new Error("myEvery Error: your callback is not function.");
+//     }
+
+//     for(let i = 0; i < this.length; i++) {
+//         const result = callback(this[i], i, this);
+//         if(!result) {
+//             return false;
+//         }
+//     }
+
+//     return true;
+// }
+
+// console.log(umEvery.myEvery((item) => item > 0))
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const umReduce = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+Array.prototype.myReducer = function(callback) {
     if(!callback) {
-        throw new Error("myEvery Error: your callback is not function.");
+        throw new Error("myReducer Error: your callback is not function.");
     }
 
     for(let i = 0; i < this.length; i++) {
@@ -135,4 +157,4 @@ Array.prototype.myEvery = function(callback) {
     return true;
 }
 
-console.log(umEvery.myEvery((item) => item > 0))
+console.log(umReduce.myReducer((item) => item > 0))
