@@ -6,7 +6,7 @@
 // // })
 
 // Array.prototype.myForEach = function(callback) {
-//     if(!callback) {
+//     if (typeof callback !== "function") {
 //         throw new Error("myForEach Error: your callback is not function.");
 //     }
 
@@ -26,7 +26,7 @@
 // const umMap = [1, 2, 3, 4, 5];
 
 // Array.prototype.myMap = function(callback) {
-//     if(!callback) {
+//    if (typeof callback !== "function") {
 //         throw new Error("myMap Error: your callback is not function.");
 //     }
 
@@ -51,7 +51,7 @@
 // const umFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Array.prototype.myFilter = function(callback) {
-//     if(!callback) {
+//     if (typeof callback !== "function") {
 //         throw new Error("myFilter Error: your callback is not function.");
 //     }
 
@@ -75,7 +75,7 @@
 // const umFind = [{id: 1, name: "Umair"}, {id: 2, name: "Momi"}, {id: 3, name: "Hadi"}];
 
 // Array.prototype.myFind = function(callback) {
-//     if(!callback) {
+//    if (typeof callback !== "function") {
 //         throw new Error("myFind Error: your callback is not function.");
 //     }
 
@@ -98,7 +98,7 @@
 // const umSome = [-2, -3, 0, 4, 5, 6, 7];
 
 // Array.prototype.mySome = function(callback) {
-//     if(!callback) {
+//     if (typeof callback !== "function") {
 //         throw new Error("mySome Error: your callback is not function.");
 //     }
 
@@ -121,9 +121,9 @@
 // const umEvery = [2, 3, 10, 4, 5, 6, 7];
 
 // Array.prototype.myEvery = function(callback) {
-//     if(!callback) {
-//         throw new Error("myEvery Error: your callback is not function.");
-//     }
+// if (typeof callback !== "function") {
+//     throw new Error("myReducer Error: callback is not a function.");
+// }
 
 //     for(let i = 0; i < this.length; i++) {
 //         const result = callback(this[i], i, this);
