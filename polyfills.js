@@ -142,19 +142,21 @@
 
 const umReduce = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-Array.prototype.myReducer = function(callback) {
-    if(!callback) {
-        throw new Error("myReducer Error: your callback is not function.");
-    }
-
-    for(let i = 0; i < this.length; i++) {
-        const result = callback(this[i], i, this);
-        if(!result) {
-            return false;
-        }
-    }
-
-    return true;
+Array.prototype.myReducer = function(callback, initialValue) {
+if (typeof callback !== "function") {
+    throw new Error("myReducer Error: callback is not a function.");
 }
 
-console.log(umReduce.myReducer((item) => item > 0))
+if (typeof initialValue !== "number" || isNaN(initialValue)) {
+    throw new Error("myReducer Error: initialValue is not a valid number.");
+}
+
+    for(let i = 0; i < this.length; i++) {
+        const result = callback(initialValue, this[i], i, this);
+        initialValue = result;
+    }
+
+    return initialValue;
+}
+
+console.log(umReduce.myReducer((acc, curr) => acc * curr, 2))
